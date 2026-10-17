@@ -1,0 +1,22 @@
+{
+  "name": "kundeeeq-business-studio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/local-server.js",
+    "dev": "node --env-file-if-exists=.env --watch src/local-server.js",
+    "admin": "node --env-file-if-exists=.env scripts/admin.js",
+    "backup": "node --env-file-if-exists=.env scripts/backup.js",
+    "restore": "node --env-file-if-exists=.env scripts/restore.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@vercel/functions": "^3.10.1",
+    "express": "^5.1.0",
+    "mongodb": "^6.20.0"
+  }
+}
