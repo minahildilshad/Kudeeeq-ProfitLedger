@@ -11,6 +11,6 @@ function application(){
 }
 app.use(async(req,res)=>{
   try { const backend=await application();backend(req,res); }
-  catch(error){console.error('Application initialization failed:',error.name);res.set('Cache-Control','no-store').status(503).json({error:'Unable to connect to the database. Check deployment settings and database access.'});}
+  catch(error){console.error('Application initialization failed:',error.name, error.code, error.codeName);res.set('Cache-Control','no-store').status(503).json({error:'Unable to connect to the database. Check deployment settings and database access.'});}
 });
 export default app;
